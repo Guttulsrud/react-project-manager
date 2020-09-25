@@ -1,10 +1,11 @@
 import React from 'react';
+import {ProjectGrid} from "../components/Project/Project";
 
 
 export const Home = () => {
     return (
         <div>
-            <h1>Home</h1>
+            <ProjectGrid className="mt-4"/>
         </div>
     );
 };

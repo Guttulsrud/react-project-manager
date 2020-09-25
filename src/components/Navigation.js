@@ -12,9 +12,12 @@ export const Navigation = () => (
     <div>
         <div>
             <Navbar>
-                <Navbar.Brand as={Link} to="/projects">Project Manager 2020</Navbar.Brand>
+                <Navbar.Brand as={Link} to="/">Project Manager 2020</Navbar.Brand>
                 <Navbar.Collapse>
                     <Nav className="mr-auto">
+                        <NavItem eventkey={1} href="/">
+                            <Nav.Link as={Link} to="/">Dashboard</Nav.Link>
+                        </NavItem>
                         <NavItem eventkey={1} href="/">
                             <Nav.Link as={Link} to="/projects">Projects</Nav.Link>
                         </NavItem>
@@ -34,6 +37,7 @@ export const Navigation = () => (
         </div>
         <Container>
             <Switch>
+                <Route exact path="/" component={Home}/>
                 <Route path="/projects" component={Projects}/>
                 <Route path="/customers" component={Customers}/>
                 <Route path="/employees" component={Employees}/>

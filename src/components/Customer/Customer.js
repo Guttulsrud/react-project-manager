@@ -1,15 +1,13 @@
-import React from 'react';
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
-import {customers, employees} from "../../data";
+import {customers} from "../../data";
+import {Badge} from "react-bootstrap";
 import Table from "react-bootstrap/Table";
+import React from "react";
 
-
-export const EmployeeTable = () => {
-    const employeeData = () => {
-        return employees.map((employee, index) => (
+export const CustomerTable = () => {
+    const customerData = () => {
+        return customers.map((project, index) => (
             <tr className="text-left" key={index}>
-                <td>{employee.name}</td>
+                <td>{project.name}</td>
             </tr>
         ));
     };
@@ -22,7 +20,7 @@ export const EmployeeTable = () => {
             </tr>
             </thead>
             <tbody>
-            {employeeData()}
+            {customerData()}
             </tbody>
         </Table>
     );
