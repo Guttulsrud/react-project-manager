@@ -1,13 +1,14 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Card from 'react-bootstrap/Card';
-import {projects} from '../../data';
+import {customers, employees, projects} from '../../data';
 import Table from 'react-bootstrap/Table';
 
 
 export const ProjectGrid = () => {
+
     const projectData = () => {
         return projects.map((project, index) => (
             <Col md={4} className="mt-4">
@@ -51,9 +52,9 @@ export const ProjectTable = () => {
         <Table striped bordered hover className="mt-2">
             <thead>
             <tr>
-                <th className="text-left">Type</th>
                 <th className="text-left">Customer</th>
-                <th className="text-left">Employees</th>
+                <th className="text-left">Type</th>
+                <th className="text-left">Employee</th>
                 <th className="text-left">Status</th>
             </tr>
             </thead>
