@@ -1,5 +1,5 @@
 import React from 'react';
-import {Navbar, Nav, Form, FormControl, Button, NavItem} from 'react-bootstrap';
+import {Navbar, Nav, NavItem} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 import {Switch, Route} from 'react-router-dom';
 import Home from '../views/Home';
@@ -9,11 +9,12 @@ import Container from 'react-bootstrap/Container';
 import Employees from '../views/Employees';
 
 export const Navigation = () => (
-    <div>
+    <>
         <div>
-            <Navbar>
+            <Navbar bg="light" expand="lg">
                 <Navbar.Brand as={Link} to="/">Project Manager 2020</Navbar.Brand>
-                <Navbar.Collapse>
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
                         <NavItem eventkey={1} href="/">
                             <Nav.Link as={Link} to="/">Dashboard</Nav.Link>
@@ -28,10 +29,6 @@ export const Navigation = () => (
                             <Nav.Link as={Link} to="/employees">Employees</Nav.Link>
                         </NavItem>
                     </Nav>
-                    <Form inline>
-                        <FormControl type="text" placeholder="Search" className="mr-sm-2"/>
-                        <Button variant="outline-success">Search</Button>
-                    </Form>
                 </Navbar.Collapse>
             </Navbar>
         </div>
@@ -43,7 +40,7 @@ export const Navigation = () => (
                 <Route path="/employees" component={Employees}/>
             </Switch>
         </Container>
-    </div>
+    </>
 );
 
 

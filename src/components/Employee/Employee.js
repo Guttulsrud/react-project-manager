@@ -1,7 +1,5 @@
 import React from 'react';
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
-import {customers, employees} from "../../data";
+import {employees} from "../../data";
 import Table from "react-bootstrap/Table";
 
 

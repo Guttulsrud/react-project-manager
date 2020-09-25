@@ -1,5 +1,4 @@
 import {customers} from "../../data";
-import {Badge} from "react-bootstrap";
 import Table from "react-bootstrap/Table";
 import React from "react";
 

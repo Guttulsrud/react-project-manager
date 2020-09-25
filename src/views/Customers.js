@@ -1,11 +1,8 @@
-import React, {useEffect, useState} from 'react';
-import Table from 'react-bootstrap/Table';
-import {Header} from '../components/Header';
+import React, {useState} from 'react';
 import {Button} from 'react-bootstrap';
 import {customers, employees, projects} from '../data';
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
-import {ProjectTable} from "../components/Project/Project";
 import {CustomerTable} from "../components/Customer/Customer";
 
 const Customers = () => {
@@ -25,17 +22,9 @@ const Customers = () => {
     const handleShow = () => setShow(true);
 
 
-    const customerData = () => {
-        return customers.map((customer, index) => (
-            <tr key={index}>
-                <td className="text-left">{customer.name}</td>
-            </tr>
-        ));
-    };
-
 
     return (
-        <div>
+        <>
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
                     <Modal.Title>Add new customer</Modal.Title>
@@ -62,7 +51,7 @@ const Customers = () => {
                 <Button className="mt-4" onClick={handleShow}>Add customer</Button>
             </div>
             <CustomerTable/>
-        </div>
+        </>
 );
 };
 

@@ -1,7 +1,7 @@
-import React, {useEffect, useState} from 'react';
-import Table from 'react-bootstrap/Table';
+import React, {useState} from 'react';
 import {Button} from 'react-bootstrap';
-import {AddProject, EditProject, ProjectGrid, ProjectTable} from '../components/Project/Project';
+import {ProjectTable} from '../components/Project/Project';
+import {listOptions} from '../utils/Utils';
 import {customers, employees, projects} from '../data';
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
@@ -24,25 +24,13 @@ const Projects = () => {
         handleClose();
     };
 
-
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
 
-    const employeeData = () => {
-        return employees.map((employee, index) => (
-            <option key={index}>{employee.name}</option>
-        ));
-    };
-    const customerData = () => {
-        return customers.map((customer, index) => (
-            <option key={index}>{customer.name}</option>
-        ));
-    };
-
 
     return (
-        <div>
+        <>
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
                     <Modal.Title>Add new project</Modal.Title>
@@ -64,14 +52,14 @@ const Projects = () => {
                             <Form.Label>Customer</Form.Label>
                             <Form.Control as="select" value={projectCustomer}
                                           onChange={(e) => setProjectCustomer(e.target.value)}>
-                                {customerData()}
+                                {listOptions(customers)}
                             </Form.Control>
                         </Form.Group>
                         <Form.Group controlId="assignEmployees">
                             <Form.Label>Assign employees</Form.Label>
                             <Form.Control as="select" value={projectEmployees}
                                           onChange={(e) => setProjectEmployees(e.target.value)}>
-                                {employeeData()}
+                                {listOptions(employees)}
                             </Form.Control>
                         </Form.Group>
                     </Form>
@@ -90,7 +78,7 @@ const Projects = () => {
                 <Button className="mt-4" onClick={handleShow}>Add project</Button>
             </div>
             <ProjectTable/>
-        </div>
+        </>
     );
 };
 
