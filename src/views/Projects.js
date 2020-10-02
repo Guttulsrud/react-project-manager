@@ -6,7 +6,7 @@ import {customers, employees, projects} from '../data';
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 
-const Projects = () => {
+export const Projects = () => {
 
     const [show, setShow] = useState(false);
     const [projectType, setProjectType] = useState('Konsulentbistand - Utvikling');
@@ -26,7 +26,6 @@ const Projects = () => {
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-
 
 
     return (
@@ -82,4 +81,3 @@ const Projects = () => {
     );
 };
 
-export default Projects;

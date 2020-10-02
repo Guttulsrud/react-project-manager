@@ -7,25 +7,29 @@ import {customers, employees, projects} from '../../data';
 import Table from 'react-bootstrap/Table';
 
 
+export const ProjectCard = (project) => (
+    <Col md={4} className="mt-4">
+        <Card className="text-left">
+            <Card.Img variant="top" src="placeholder-image.png" />
+            <Card.Body>
+                <Card.Title>{project.customer}</Card.Title>
+                <Card.Text>
+                    Type: {project.type}
+                </Card.Text>
+                <Card.Text>
+                    Consultants: {project.employees}
+                </Card.Text>
+                <Button variant="primary">Edit project</Button>
+            </Card.Body>
+        </Card>
+    </Col>
+)
+
 export const ProjectGrid = () => {
 
     const projectData = () => {
         return projects.map((project, index) => (
-            <Col md={4} className="mt-4">
-                <Card className="text-left">
-                    <Card.Img variant="top" src="placeholder-image.png" />
-                    <Card.Body>
-                        <Card.Title>{project.customer}</Card.Title>
-                        <Card.Text>
-                            Type: {project.type}
-                        </Card.Text>
-                        <Card.Text>
-                            Consultants: {project.employees}
-                        </Card.Text>
-                        <Button variant="primary">Edit project</Button>
-                    </Card.Body>
-                </Card>
-            </Col>
+            <ProjectCard project={project}/>
         ));
     };
     return (

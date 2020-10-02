@@ -1,11 +1,9 @@
 import React, {useState} from 'react';
-import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
-import {AddEmployee, EmployeeTable} from '../components/Employee/Employee';
-import {customers, employees} from '../data';
+import {EmployeeTable} from '../components/Employee/Employee';
+import {employees} from '../data';
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
-import {CustomerTable} from "../components/Customer/Customer";
 
 const Employees = () => {
 
@@ -22,14 +20,6 @@ const Employees = () => {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
-
-    const employeeData = () => {
-        return employees.map((employee, index) => (
-            <tr key={index}>
-                <td className="text-left">{employee.name}</td>
-            </tr>)
-        )
-    }
 
     return (
         <div>
